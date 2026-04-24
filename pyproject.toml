@@ -1,0 +1,10 @@
+[project]
+name = "estate-api"
+version = "0.1.0"
+description = "API REST de consulta de inmuebles — Prueba Técnica Habi"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mysql-connector-python>=9.6.0",
+    "python-dotenv>=1.2.2",
+]

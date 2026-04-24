@@ -1,0 +1,29 @@
+{
+  "_comment": "Todos los campos son opcionales y combinables entre sí",
+  "examples": [
+    {
+      "description": "Sin filtros — devuelve todos los inmuebles visibles",
+      "body": {}
+    },
+    {
+      "description": "Filtrar por ciudad",
+      "body": { "city": "bogota" }
+    },
+    {
+      "description": "Filtrar por estado",
+      "body": { "status": "en_venta" }
+    },
+    {
+      "description": "Filtrar por año de construcción",
+      "body": { "year": 2000 }
+    },
+    {
+      "description": "Filtros combinados — ciudad + estado",
+      "body": { "city": "bogota", "status": "pre_venta" }
+    },
+    {
+      "description": "Filtros combinados — ciudad + año + estado",
+      "body": { "city": "medellin", "year": 2018, "status": "vendido" }
+    }
+  ]
+}
