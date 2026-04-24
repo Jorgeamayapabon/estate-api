@@ -6,7 +6,7 @@ API REST de consulta de inmuebles y diseño del servicio de "me gusta", desarrol
 
 | Tecnología | Versión | Por qué |
 |---|---|---|
-| Python | 3.11+ | Versión estable con mejoras de rendimiento y tipado |
+| Python | 3.12+ | Versión estable con mejoras de rendimiento y tipado |
 | MySQL | 8.0 | Motor relacional provisto por Habi |
 | `http.server` | stdlib | Requisito explícito — sin frameworks externos |
 | `unittest` | stdlib | Suite de testing integrada, sin dependencias extra |
@@ -43,14 +43,10 @@ habi-backend/
 ```bash
 # Clonar el repositorio
 git clone <url-del-repo>
-cd habi-backend
+cd estate-api
 
-# Crear entorno virtual
-python3 -m venv venv
-source venv/bin/activate
-
-# Instalar dependencias
-pip install mysql-connector-python python-dotenv
+# Instalar dependencias (uv crea el virtualenv automáticamente)
+uv sync
 
 # Configurar variables de entorno
 cp .env.example .env
@@ -61,7 +57,7 @@ cp .env.example .env
 
 ```bash
 # Iniciar el servidor (Servicio 1 — Consulta de inmuebles)
-python -m service_properties.server
+uv run python -m service_properties.server
 # El servidor escucha en http://localhost:8080
 ```
 
@@ -79,10 +75,10 @@ Ver más ejemplos en `examples/filters_input.json`.
 
 ```bash
 # Correr todos los tests
-python -m unittest discover -s service_properties/tests -v
+uv run python -m unittest discover -s service_properties/tests -v
 
 # Correr un módulo específico
-python -m unittest service_properties.tests.test_filters -v
+uv run python -m unittest service_properties.tests.test_filters -v
 ```
 
 ## Decisiones de diseño
